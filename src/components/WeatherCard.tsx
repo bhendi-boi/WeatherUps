@@ -1,31 +1,63 @@
-import { WiCloudy, WiRaindrop } from "react-icons/wi";
 import Temp from "./Temp";
+import getIcon from "../helpers/getIcon";
 
 type WeatherCardProps = {
 	time: string;
-	icon?: string;
-	highTemp: number;
-	lowTemp: number;
-	humidity: number;
+	weatherCode: number;
+	temp: number;
+	feelsLikeTemp: number;
+	humidity?: number;
 };
-const WeatherCard = ({
+export const HourlyWeatherCard = ({
 	time,
-	icon,
-	highTemp,
-	lowTemp,
+	weatherCode,
+	temp,
+	feelsLikeTemp,
 }: // humidity,
 WeatherCardProps) => {
 	return (
 		<div className="flex flex-col items-center w-32 h-40 py-2 text-black bg-white rounded-sm shadow-md">
 			<span>{time}</span>
-			<WiCloudy className="flex-1 w-full h-full" />
-			<div className="flex items-center justify-center">
+			<div className="flex-grow">{getIcon(weatherCode)}</div>
+			<div className="flex flex-col items-center justify-center">
 				{" "}
-				<Temp temp={highTemp} high /> / <Temp temp={lowTemp} />{" "}
+				<Temp temp={temp} />{" "}
+				<span className="text-xs">
+					Feels like <Temp temp={feelsLikeTemp} />{" "}
+				</span>
 				{/* <WiRaindrop size={30} className="self-center" /> */}
 			</div>
 		</div>
 	);
 };
 
-export default WeatherCard;
+export type DailyWeatherCardProps = {
+	day: string;
+	weatherCode: number;
+	maxTemperature: number;
+	minTemperature: number;
+	apperantMaxTemperature: number;
+};
+
+export const DailyWeatherCard = ({
+	day,
+	weatherCode,
+	maxTemperature,
+	minTemperature,
+	apperantMaxTemperature,
+}: DailyWeatherCardProps) => {
+	return (
+		<div className="flex flex-col items-center w-32 h-40 py-2 text-black bg-white rounded-sm shadow-md">
+			<span>{day}</span>
+			<div className="flex-grow">{getIcon(weatherCode)}</div>
+			<div className="flex flex-col items-center justify-center">
+				<span>
+					<Temp temp={maxTemperature} high /> / <Temp temp={minTemperature} />
+				</span>
+				<span className="text-xs">
+					Feels like <Temp temp={apperantMaxTemperature} />{" "}
+				</span>
+			</div>
+		</div>
+	);
+};

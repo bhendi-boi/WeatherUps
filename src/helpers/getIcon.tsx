@@ -4,13 +4,13 @@ import { SiCentos } from "react-icons/si";
 import { IoThunderstormOutline } from "react-icons/io5";
 export default function getIcon(weatherCode: number) {
 	if (weatherCode === 0) {
-		return <BsSun size={30} />;
+		return <BsSun className="w-full h-full" />;
 	}
 	if (weatherCode >= 1 && weatherCode <= 3) {
 		return <BsCloudSun className="w-full h-full" />;
 	}
 	if (weatherCode === 45 || weatherCode === 48) {
-		return <GiFog size={30} />;
+		return <GiFog className="w-full h-full" />;
 	}
 	if (
 		weatherCode === 51 ||
@@ -19,7 +19,7 @@ export default function getIcon(weatherCode: number) {
 		weatherCode === 56 ||
 		weatherCode === 57
 	) {
-		return <SiCentos size={30} />;
+		return <SiCentos className="w-full h-full" />;
 	}
 	if (
 		weatherCode === 61 ||
@@ -27,12 +27,12 @@ export default function getIcon(weatherCode: number) {
 		weatherCode === 65 ||
 		(weatherCode >= 80 && weatherCode <= 82)
 	) {
-		return <BsCloudRain size={30} />;
+		return <BsCloudRain className="w-full h-full" />;
 	}
 	if (weatherCode === 66 || weatherCode === 67) {
 		return;
 	}
 	if (weatherCode === 95 || weatherCode === 96 || weatherCode === 99) {
-		return <IoThunderstormOutline size={30} />;
+		return <IoThunderstormOutline className="w-full h-full" />;
 	}
 }

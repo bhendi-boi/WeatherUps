@@ -10,6 +10,7 @@ import getCurrentTime from "./helpers/getCurrentTime";
 import { GoLocation } from "react-icons/go";
 import getADaysData from "./helpers/getADaysData";
 import getIcon from "./helpers/getIcon";
+import DailyCaurosel from "./components/DailyCaurosel";
 
 const App = () => {
 	const [apiRes, setApiRes] = useLocalStorageState("APIRES", null);
@@ -17,6 +18,7 @@ const App = () => {
 		const response = await useWeather().then((res) => res.json());
 		console.log(response);
 		setApiRes(response);
+		setCurrentWeather(apiRes["current_weather"]);
 	}
 	const [currentWeather, setCurrentWeather] = useState(
 		apiRes["current_weather"]
@@ -24,8 +26,8 @@ const App = () => {
 	const [LAT, LON] = getCords(apiRes);
 	const CURRENT_TIME: string = getCurrentTime(apiRes);
 	const CURRENT_TEMPERATURE = currentWeather["temperature"];
-	const TODAYS_DATA = getADaysData(apiRes, 0);
-
+	const TODAYS_DATA = getADaysData(0);
+	console.log(apiRes);
 	return (
 		<main className="h-screen sm:w-3/4 sm:mx-auto dark:text-neutral-200">
 			<div className="flex items-center px-6">
@@ -49,6 +51,9 @@ const App = () => {
 				<Caurosel />
 			</div>
 			<button onClick={handleFetch}>Fetch</button>
+			<div className="px-6">
+				<DailyCaurosel />
+			</div>
 		</main>
 	);
 };
