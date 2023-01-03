@@ -1,8 +1,8 @@
 import getADaysData from "./getADaysData";
-export default function getDailyData() {
+export default function getDailyData(apiRes: any) {
 	let data = [];
 	for (let i = 0; i < 6; i++) {
-		data.push(getADaysData(i + 1));
+		data.push(getADaysData(apiRes, i + 1));
 	}
 	return data;
 }

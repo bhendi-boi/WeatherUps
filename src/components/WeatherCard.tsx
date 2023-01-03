@@ -13,8 +13,7 @@ export const HourlyWeatherCard = ({
 	weatherCode,
 	temp,
 	feelsLikeTemp,
-}: // humidity,
-WeatherCardProps) => {
+}: WeatherCardProps) => {
 	return (
 		<div className="flex flex-col items-center w-32 h-40 py-2 text-black bg-white rounded-sm shadow-md">
 			<span>{time}</span>

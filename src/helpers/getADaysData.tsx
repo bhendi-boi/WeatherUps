@@ -1,5 +1,4 @@
-export default function getADaysData(num: number) {
-	const apiRes = JSON.parse(localStorage.getItem("APIRES") || "");
+export default function getADaysData(apiRes: any, num: number) {
 	const daily = apiRes["daily"];
 	const weatherCode = daily["weathercode"][num];
 	const maxTemperature = daily["temperature_2m_max"][num];

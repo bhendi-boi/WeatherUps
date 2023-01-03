@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Temp from "./components/Temp";
 import Caurosel from "./components/Caurosel";
 
@@ -14,9 +14,18 @@ import DailyCaurosel from "./components/DailyCaurosel";
 
 const App = () => {
 	const [apiRes, setApiRes] = useLocalStorageState("APIRES", null);
+	// useEffect(() => {
+	// 	async function handleFetch() {
+	// 		const response = await useWeather().then((res) => res.json());
+	// 		// console.log(response);
+	// 		setApiRes(response);
+	// 		setCurrentWeather(apiRes["current_weather"]);
+	// 	}
+	// 	handleFetch();
+	// }, []);
 	async function handleFetch() {
 		const response = await useWeather().then((res) => res.json());
-		console.log(response);
+		// console.log(response);
 		setApiRes(response);
 		setCurrentWeather(apiRes["current_weather"]);
 	}
@@ -26,8 +35,7 @@ const App = () => {
 	const [LAT, LON] = getCords(apiRes);
 	const CURRENT_TIME: string = getCurrentTime(apiRes);
 	const CURRENT_TEMPERATURE = currentWeather["temperature"];
-	const TODAYS_DATA = getADaysData(0);
-	console.log(apiRes);
+	const TODAYS_DATA = getADaysData(apiRes, 0);
 	return (
 		<main className="min-h-screen sm:w-3/4 sm:mx-auto dark:text-neutral-200">
 			<div className="flex items-center px-6">
@@ -50,10 +58,12 @@ const App = () => {
 				<span>{CURRENT_TIME}</span>
 			</div>
 			<div className="px-6 my-6">
-				<Caurosel />
+				{" "}
+				<Caurosel {...apiRes} />{" "}
 			</div>
 			<div className="px-6 my-6">
-				<DailyCaurosel />
+				{" "}
+				<DailyCaurosel {...apiRes} />{" "}
 			</div>
 			<button onClick={handleFetch}>Fetch</button>
 		</main>

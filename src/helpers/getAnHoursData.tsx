@@ -1,5 +1,5 @@
-export default function getAnHoursData(num: number) {
-	const apiRes = JSON.parse(localStorage.getItem("APIRES") || "");
+export default function getAnHoursData(apiRes: any, num: number) {
+	// const apiRes = JSON.parse(localStorage.getItem("APIRES") || "");
 	// if (!apiRes) {
 	// 	return undefined;
 	// }
