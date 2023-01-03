@@ -9,7 +9,7 @@ type IconProps = {
 const Nav = () => {
 	const [theme, toggleTheme] = useTheme();
 	function handleClick() {
-		toggleTheme();
+		// toggleTheme();
 	}
 	return (
 		<>
