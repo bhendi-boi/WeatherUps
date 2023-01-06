@@ -75,3 +75,35 @@ h6 {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: .4rem;
+    height: .6rem;
+    background-color: aliceblue;
+    border-radius: .3rem;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    border-radius: .2rem;
+    background-color: #386FA4;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(56, 111, 164, .8);
+  }
+
+  .scrollbar-page::-webkit-scrollbar {
+    width: .8rem;
+    background-color: #C9C9C9;
+  }
+
+  .scrollbar-page::-webkit-scrollbar-thumb {
+    border-radius: .4rem;
+    background-color: #386FA4;
+  }
+
+  .scrollbar-page::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(56, 111, 164, .8);
+  }
+}
