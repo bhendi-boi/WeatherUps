@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Temp from "./Temp";
 import getIcon from "../helpers/getIcon";
 
@@ -46,15 +47,16 @@ export const DailyWeatherCard = ({
 	apperantMaxTemperature,
 }: DailyWeatherCardProps) => {
 	return (
-		<div className="flex flex-col items-center w-32 h-40 py-2 text-black bg-white rounded-sm shadow-md">
-			<span>{day}</span>
-			<div className="flex-grow">{getIcon(weatherCode)}</div>
-			<div className="flex flex-col items-center justify-center">
+		<div className="flex flex-col items-center w-32 h-40 py-2 rounded-md drop-shadow-sm bg-slate-50 shadow-neutral-200">
+			<span className="text-lg font-medium text-slate-900">{day}</span>
+			<div className="flex-grow pb-2 text-black">{getIcon(weatherCode)}</div>
+			<div className="flex flex-col items-center justify-center text-slate-700">
 				<span>
-					<Temp temp={maxTemperature} high /> / <Temp temp={minTemperature} />
+					<Temp color="slate-900" temp={maxTemperature} high /> /{" "}
+					<Temp temp={minTemperature} />
 				</span>
 				<span className="text-xs">
-					Feels like <Temp temp={apperantMaxTemperature} />{" "}
+					Feels like <Temp color={"slate-900"} high temp={apperantMaxTemperature} />{" "}
 				</span>
 			</div>
 		</div>
