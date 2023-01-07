@@ -13,3 +13,4 @@ I have used Open Meteo's weather api for weather forecast
 ## small tasks
 
 - add date in day in daily weather cards
+- make getAnHoursData return actual data

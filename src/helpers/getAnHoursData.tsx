@@ -1,9 +1,5 @@
-export default function getAnHoursData(apiRes: any, num: number) {
-	// const apiRes = JSON.parse(localStorage.getItem("APIRES") || "");
-	// if (!apiRes) {
-	// 	return undefined;
-	// }
-	const timeStamp = apiRes["hourly"]["time"][num];
+export default function getAnHoursData(hourly: any, num: number) {
+	const timeStamp = hourly["time"][num];
 	function getHour(timeStamp: number) {
 		const date = new Date(timeStamp * 1000);
 		let currentHours = date.getHours();
