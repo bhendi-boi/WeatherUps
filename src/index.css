@@ -85,7 +85,7 @@ h6 {
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
-    border-radius: .2rem;
+    border-radius: 9999px;
     background-color: #386FA4;
   }
 
@@ -99,7 +99,7 @@ h6 {
   }
 
   .scrollbar-page::-webkit-scrollbar-thumb {
-    border-radius: .4rem;
+    border-radius: 9999px;
     background-color: #386FA4;
   }
 

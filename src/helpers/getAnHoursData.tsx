@@ -1,3 +1,4 @@
+import { AnHourData } from "./getHourlyData";
 export default function getAnHoursData(hourly: any, num: number) {
 	const timeStamp = hourly["time"][num];
 	function getHour(timeStamp: number) {
@@ -6,10 +7,14 @@ export default function getAnHoursData(hourly: any, num: number) {
 		let currentMin = date.getMinutes();
 		return currentHours + ":" + currentMin;
 	}
-	return {
+	const weatherCode = hourly["weathercode"][num];
+	const temp = hourly["temperature_2m"][num];
+	const feelsLikeTemp = hourly["apparent_temperature"][num];
+	const data: AnHourData = {
+		temp,
+		weatherCode,
+		feelsLikeTemp,
 		time: getHour(timeStamp),
-		weatherCode: 2,
-		temp: 28,
-		feelsLikeTemp: 23,
 	};
+	return data;
 }

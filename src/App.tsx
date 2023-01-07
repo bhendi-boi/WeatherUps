@@ -13,6 +13,28 @@ import getIcon from "./helpers/getIcon";
 import DailyCaurosel from "./components/DailyCaurosel";
 
 const App = () => {
+	const [coOrds, setCoOrds] = useState({
+		lat: "1",
+		long: "1",
+	});
+	useEffect(() => {
+		navigator.geolocation.getCurrentPosition(findCords, error, {
+			timeout: 100000,
+		});
+		function findCords(position: any) {
+			setCoOrds({
+				lat: position.coords.latitude,
+				long: position.coords.longitude,
+			});
+		}
+		function error() {
+			console.log("error");
+		}
+		const id = navigator.geolocation.watchPosition(findCords, error);
+		navigator.geolocation.clearWatch(id);
+	}, []);
+	console.log(coOrds);
+
 	const [apiRes, setApiRes] = useLocalStorageState("APIRES", null);
 	// useEffect(() => {
 	// 	async function handleFetch() {

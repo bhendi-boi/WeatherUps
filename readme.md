@@ -6,7 +6,6 @@ I have used Open Meteo's weather api for weather forecast
 ## todo
 
 -implement hourly forecast
--find better icons
 -implement lightmode
 -overall better design
 
@@ -14,3 +13,4 @@ I have used Open Meteo's weather api for weather forecast
 
 - add date in day in daily weather cards
 - make getAnHoursData return actual data
+- find icons for night
