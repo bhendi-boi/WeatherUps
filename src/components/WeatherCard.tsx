@@ -16,18 +16,21 @@ export const HourlyWeatherCard = ({
 	feelsLikeTemp,
 }: WeatherCardProps) => {
 	return (
-		<div className="flex flex-col items-center w-32 h-40 py-2 text-black bg-white rounded-sm shadow-md">
-			<span>{time}</span>
-			<div className="flex-grow">{getIcon(weatherCode)}</div>
-			<div className="flex flex-col items-center justify-center">
+		<motion.div
+			whileHover={{ scale: 1.1, y: "-5%" }}
+			className="flex flex-col items-center w-32 h-40 py-2 rounded-md cursor-pointer bg-slate-50"
+		>
+			<span className="text-lg font-medium text-slate-900">{time}</span>
+			<div className="flex-grow pb-2 text-black">{getIcon(weatherCode)}</div>
+			<div className="flex flex-col items-center justify-center text-slate-700">
 				{" "}
-				<Temp temp={temp} />{" "}
+				<Temp temp={temp} color="slate-900" high />{" "}
 				<span className="text-xs">
-					Feels like <Temp temp={feelsLikeTemp} />{" "}
+					Feels like <Temp temp={feelsLikeTemp} high color="slate-900" />{" "}
 				</span>
 				{/* <WiRaindrop size={30} className="self-center" /> */}
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
@@ -47,7 +50,11 @@ export const DailyWeatherCard = ({
 	apperantMaxTemperature,
 }: DailyWeatherCardProps) => {
 	return (
-		<div className="flex flex-col items-center w-32 h-40 py-2 rounded-md drop-shadow-sm bg-slate-50 shadow-neutral-200">
+		<motion.div
+			whileHover={{ scale: 1.1, y: "-5%" }}
+			transition={{ type: "tween", ease: "easeOut", duration: 0.2 }}
+			className="flex flex-col items-center w-32 h-40 py-2 rounded-md cursor-pointer bg-slate-50"
+		>
 			<span className="text-lg font-medium text-slate-900">{day}</span>
 			<div className="flex-grow pb-2 text-black">{getIcon(weatherCode)}</div>
 			<div className="flex flex-col items-center justify-center text-slate-700">
@@ -56,9 +63,9 @@ export const DailyWeatherCard = ({
 					<Temp temp={minTemperature} />
 				</span>
 				<span className="text-xs">
-					Feels like <Temp color={"slate-900"} high temp={apperantMaxTemperature} />{" "}
+					Feels like <Temp color="slate-900" high temp={apperantMaxTemperature} />{" "}
 				</span>
 			</div>
-		</div>
+		</motion.div>
 	);
 };

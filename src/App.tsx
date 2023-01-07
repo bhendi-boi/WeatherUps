@@ -57,14 +57,8 @@ const App = () => {
 				<br />
 				<span>{CURRENT_TIME}</span>
 			</div>
-			<div className="px-6 my-6">
-				{" "}
-				<Caurosel {...apiRes} />{" "}
-			</div>
-			<div className="px-6 my-6">
-				{" "}
-				<DailyCaurosel {...apiRes} />{" "}
-			</div>
+			<Caurosel {...apiRes} />
+			<DailyCaurosel {...apiRes} />
 			<button onClick={handleFetch}>Fetch</button>
 		</main>
 	);
