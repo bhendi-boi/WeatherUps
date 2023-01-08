@@ -33,7 +33,6 @@ const App = () => {
 		const id = navigator.geolocation.watchPosition(findCords, error);
 		navigator.geolocation.clearWatch(id);
 	}, []);
-	console.log(coOrds);
 
 	const [apiRes, setApiRes] = useLocalStorageState("APIRES", null);
 	// useEffect(() => {
