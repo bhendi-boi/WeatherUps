@@ -38,9 +38,8 @@ const App = () => {
 	const [apiRes, setApiRes] = useLocalStorageState("APIRES", FAKERES);
 	async function handleFetch() {
 		const response = await useWeather().then((res) => res.json());
-		// console.log(response);
 		setApiRes(response);
-		setCurrentWeather(apiRes["current_weather"]);
+		setCurrentWeather(response["current_weather"]);
 	}
 	const [currentWeather, setCurrentWeather] = useState(
 		apiRes["current_weather"]
@@ -49,7 +48,6 @@ const App = () => {
 	const CURRENT_TIME: string = getCurrentTime(apiRes);
 	const CURRENT_TEMPERATURE = currentWeather["temperature"];
 	const TODAYS_DATA = getADaysData(apiRes, 0);
-	console.log(apiRes);
 	return (
 		<main className="min-h-screen sm:w-3/4 sm:mx-auto text-neutral-700 dark:text-neutral-200">
 			<div className="flex items-center px-6">
