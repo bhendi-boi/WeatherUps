@@ -18,7 +18,7 @@ export const HourlyWeatherCard = ({
 	return (
 		<motion.div
 			whileHover={{ scale: 1.1, y: "-5%" }}
-			className="flex flex-col items-center w-32 h-40 py-2 rounded-md cursor-pointer bg-slate-50"
+			className="flex flex-col items-center w-36 h-44 py-2 rounded-lg cursor-pointer bg-white shadow-lg"
 		>
 			<span className="text-lg font-medium text-slate-900">{time}</span>
 			<div className="flex-grow pb-2 text-black">{getIcon(weatherCode)}</div>
@@ -53,7 +53,7 @@ export const DailyWeatherCard = ({
 		<motion.div
 			whileHover={{ scale: 1.1, y: "-5%" }}
 			transition={{ type: "tween", ease: "easeOut", duration: 0.2 }}
-			className="flex flex-col items-center w-32 h-40 py-2 rounded-md cursor-pointer bg-slate-50"
+			className="flex flex-col items-center w-36 h-44 py-2 rounded-lg cursor-pointer bg-white shadow-lg"
 		>
 			<span className="text-lg font-medium text-slate-900">{day}</span>
 			<div className="flex-grow pb-2 text-black">{getIcon(weatherCode)}</div>

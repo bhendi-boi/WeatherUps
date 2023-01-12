@@ -51,19 +51,19 @@ const App = () => {
 	const TODAYS_DATA = getADaysData(apiRes, 0);
 	console.log(apiRes);
 	return (
-		<main className="min-h-screen sm:w-3/4 sm:mx-auto dark:text-neutral-200">
+		<main className="min-h-screen sm:w-3/4 sm:mx-auto text-neutral-700 dark:text-neutral-200">
 			<div className="flex items-center px-6">
-				<div className="flex flex-col w-1/2 gap-4 text-4xl dark:text-neutral-50">
-					<Temp temp={CURRENT_TEMPERATURE} />
-					<span className="inline-flex items-center text-base">
+				<div className="flex flex-col w-1/2 gap-4 text-4xl text-neutral-900 dark:text-neutral-50">
+					<Temp temp={CURRENT_TEMPERATURE} high />
+					<span className="inline-flex items-center font-medium text-base">
 						<GoLocation size={18} /> {LAT} , {LON}
 					</span>
 				</div>
-				<div className="w-1/2 h-full p-8">
+				<div className="w-1/2 h-full p-8 text-neutral-900 dark:text-neutral-50">
 					{getIcon(currentWeather.weathercode)}
 				</div>
 			</div>
-			<div className="px-6">
+			<div className="px-6 text-neutral-800 dark:text-neutral-100">
 				{" "}
 				<Temp temp={TODAYS_DATA.maxTemperature} high /> /{" "}
 				<Temp temp={TODAYS_DATA.minTemperature} /> Feels like{" "}

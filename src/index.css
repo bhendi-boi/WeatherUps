@@ -106,4 +106,6 @@ h6 {
   .scrollbar-page::-webkit-scrollbar-thumb:hover {
     background-color: rgba(56, 111, 164, .8);
   }
+
+  .horizantal-scroll {}
 }

@@ -1,17 +1,21 @@
 import TeritiaryLink from "./components/TeritiaryLink";
 const About = () => {
 	return (
-		<main className="min-h-[calc(100vh-4.5rem)] sm:w-3/4 sm:mx-auto dark:text-neutral-200">
+		<main className="min-h-[calc(100vh-4.5rem)] sm:w-3/4 sm:mx-auto dark:text-neutral-200 text-neutral-700">
 			<section className="px-4 pb-4">
-				<h2 className="my-2 text-2xl md:text-4xl">Resources</h2>
-				<h3 className="my-1">Open Meteo API</h3>
+				<h2 className="my-2 text-2xl md:text-4xl text-neutral-900 font-medium">
+					Resources
+				</h2>
+				<h3 className="my-1 text-neutral-800">Open Meteo API</h3>
 				<TeritiaryLink
 					text="https://open-meteo.com/en/docs"
 					href="https://open-meteo.com/en/docs"
 				/>
 			</section>
 			<section className="px-4 pb-4">
-				<h2 className="my-2 text-2xl md:text-4xl">About this App</h2>
+				<h2 className="my-2 text-2xl md:text-4xl text-neutral-900 font-medium">
+					About this App
+				</h2>
 				<p className="pb-2">
 					This app is completely built with React and Tailwind CSS. I took
 					inspiration from{" "}
@@ -28,7 +32,9 @@ const About = () => {
 				</p>
 			</section>
 			<section className="px-4">
-				<h2 className="my-2 text-2xl md:text-4xl">About me</h2>
+				<h2 className="my-2 text-2xl md:text-4xl text-neutral-900 font-medium">
+					About me
+				</h2>
 				<p className="pb-3">
 					I am Jyothikrishna. I am a sophomore from IIITDM, Kancheepuram. You can
 					contact me through the following socials.{" "}
