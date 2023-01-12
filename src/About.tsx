@@ -3,17 +3,19 @@ const About = () => {
 	return (
 		<main className="min-h-[calc(100vh-4.5rem)] sm:w-3/4 sm:mx-auto dark:text-neutral-200 text-neutral-700">
 			<section className="px-4 pb-4">
-				<h2 className="my-2 text-2xl md:text-4xl text-neutral-900 font-medium">
+				<h2 className="my-2 text-2xl md:text-4xl text-neutral-900 font-medium dark:text-neutral-50">
 					Resources
 				</h2>
-				<h3 className="my-1 text-neutral-800">Open Meteo API</h3>
+				<h3 className="my-1 text-neutral-800 dark:text-neutral-100">
+					Open Meteo API
+				</h3>
 				<TeritiaryLink
 					text="https://open-meteo.com/en/docs"
 					href="https://open-meteo.com/en/docs"
 				/>
 			</section>
 			<section className="px-4 pb-4">
-				<h2 className="my-2 text-2xl md:text-4xl text-neutral-900 font-medium">
+				<h2 className="my-2 text-2xl md:text-4xl text-neutral-900 font-medium dark:text-neutral-50">
 					About this App
 				</h2>
 				<p className="pb-2">
@@ -32,12 +34,17 @@ const About = () => {
 				</p>
 			</section>
 			<section className="px-4">
-				<h2 className="my-2 text-2xl md:text-4xl text-neutral-900 font-medium">
+				<h2 className="my-2 text-2xl md:text-4xl text-neutral-900 font-medium dark:text-neutral-100">
 					About me
 				</h2>
 				<p className="pb-3">
 					I am Jyothikrishna. I am a sophomore from IIITDM, Kancheepuram. You can
-					contact me through the following socials.{" "}
+					contact me through the following socials or by visiting my{" "}
+					<TeritiaryLink
+						href="https://bhendi-boi.github.io/portfolio/"
+						text="portfolio"
+					/>{" "}
+					website.
 				</p>
 				<ul
 					role="list"

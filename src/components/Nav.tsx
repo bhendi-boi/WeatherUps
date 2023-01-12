@@ -15,7 +15,7 @@ const Nav = () => {
 		<>
 			<nav className="sticky top-0 left-0 z-10 flex items-center h-16 bg-white shadow-xl">
 				<div className="flex items-center w-full gap-4 mx-4 sm:mx-auto sm:w-3/4">
-					<Link to="/" className="flex-1">
+					<Link to="/" className="mr-auto">
 						<h1 className="text-3xl font-bold text-neutral-900">Weather Ups</h1>
 					</Link>
 					<Link
