@@ -1,7 +1,7 @@
 import TeritiaryLink from "./components/TeritiaryLink";
 const About = () => {
 	return (
-		<main className="min-h-screen sm:w-3/4 sm:mx-auto dark:text-neutral-200">
+		<main className="min-h-[calc(100vh-4.5rem)] sm:w-3/4 sm:mx-auto dark:text-neutral-200">
 			<section className="px-4 pb-4">
 				<h2 className="my-2 text-2xl md:text-4xl">Resources</h2>
 				<h3 className="my-1">Open Meteo API</h3>
