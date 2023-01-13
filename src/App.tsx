@@ -58,7 +58,7 @@ const App = () => {
 					</span>
 				</div>
 				<div className="w-1/2 h-full p-8 text-neutral-900 dark:text-neutral-50">
-					{getIcon(currentWeather.weathercode)}
+					{getIcon({ weatherCode: currentWeather.weathercode })}
 				</div>
 			</div>
 			<div className="px-6 text-neutral-800 dark:text-neutral-100">

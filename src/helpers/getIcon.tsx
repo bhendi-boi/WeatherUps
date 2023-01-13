@@ -1,16 +1,36 @@
-import { BsSun, BsCloudSun, BsCloudRain } from "react-icons/bs";
-import { GiFog } from "react-icons/gi";
+import {
+	BsSun,
+	BsCloudSun,
+	BsCloudRain,
+	BsCloudMoon,
+	BsMoon,
+} from "react-icons/bs";
+import { WiDayFog, WiNightFog } from "react-icons/wi";
 import { SiCentos } from "react-icons/si";
 import { IoThunderstormOutline } from "react-icons/io5";
-export default function getIcon(weatherCode: number) {
+type getIconProps = {
+	weatherCode: number;
+	night?: boolean;
+};
+
+export default function getIcon({ weatherCode, night = false }: getIconProps) {
 	if (weatherCode === 0) {
+		if (night) {
+			return <BsMoon className="w-full h-full" />;
+		}
 		return <BsSun className="w-full h-full" />;
 	}
 	if (weatherCode >= 1 && weatherCode <= 3) {
+		if (night) {
+			return <BsCloudMoon className="w-full h-full" />;
+		}
 		return <BsCloudSun className="w-full h-full" />;
 	}
 	if (weatherCode === 45 || weatherCode === 48) {
-		return <GiFog className="w-full h-full" />;
+		if (night) {
+			return <WiNightFog className="w-full h-full" />;
+		}
+		return <WiDayFog className="w-full h-full" />;
 	}
 	if (
 		weatherCode === 51 ||

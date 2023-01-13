@@ -15,13 +15,19 @@ export const HourlyWeatherCard = ({
 	temp,
 	feelsLikeTemp,
 }: WeatherCardProps) => {
+	const night =
+		Number(
+			time.split("").reverse().join("").slice(3).split("").reverse().join("")
+		) > 18;
 	return (
 		<motion.div
 			whileHover={{ scale: 1.1, y: "-5%" }}
 			className="flex flex-col items-center w-36 h-44 py-2 rounded-lg cursor-pointer bg-white shadow-lg"
 		>
 			<span className="text-lg font-medium text-slate-900">{time}</span>
-			<div className="flex-grow pb-2 text-black">{getIcon(weatherCode)}</div>
+			<div className="flex-grow pb-2 text-black">
+				{getIcon({ weatherCode, night })}
+			</div>
 			<div className="flex flex-col items-center justify-center text-slate-700">
 				{" "}
 				<Temp temp={temp} color="slate-900" high />{" "}
@@ -56,7 +62,7 @@ export const DailyWeatherCard = ({
 			className="flex flex-col items-center w-36 h-44 py-2 rounded-lg cursor-pointer bg-white shadow-lg"
 		>
 			<span className="text-lg font-medium text-slate-900">{day}</span>
-			<div className="flex-grow pb-2 text-black">{getIcon(weatherCode)}</div>
+			<div className="flex-grow pb-2 text-black">{getIcon({ weatherCode })}</div>
 			<div className="flex flex-col items-center justify-center text-slate-700">
 				<span>
 					<Temp color="slate-900" temp={maxTemperature} high /> /{" "}
