@@ -53,20 +53,27 @@ const App = () => {
 	return (
 		<main className="min-h-screen sm:w-3/4 sm:mx-auto text-neutral-700 dark:text-neutral-200">
 			<div className="flex items-center px-6">
-				<div className="flex flex-col w-1/2 gap-4 text-4xl text-neutral-900 dark:text-neutral-50">
-					<Temp temp={CURRENT_TEMPERATURE} high />
-					<span className="inline-flex items-center font-medium text-base">
-						<GoLocation size={18} /> {LAT} , {LON}
+				<div className="flex flex-col justify-center w-1/2 text-4xl text-neutral-900 dark:text-neutral-50">
+					<Temp temp={CURRENT_TEMPERATURE} high color=" md:text-9xl" />
+					<span className="inline-flex items-center mt-4 mb-1 text-base font-medium md:ml-3 md:text-lg">
+						<GoLocation size={18} className="mr-1" /> {LAT} , {LON}
+					</span>
+					<span className="inline-flex items-center text-sm font-medium tracking-wide md:ml-4 opacity-70">
+						All temperature are displayed in celcius
 					</span>
 				</div>
-				<div className="w-1/2 h-full p-8 text-neutral-900 dark:text-neutral-50">
+				<div className="w-1/2 h-full p-8 md:p-16 text-neutral-900 dark:text-neutral-50">
 					{getIcon({ weatherCode: currentWeather.weathercode, night: night })}
 				</div>
 			</div>
-			<div className="px-6 text-neutral-800 dark:text-neutral-100">
+			<div className="px-6 md:ml-4 md:text-lg text-neutral-800 dark:text-neutral-200">
 				{" "}
-				<Temp temp={TODAYS_DATA.maxTemperature} high /> /{" "}
-				<Temp temp={TODAYS_DATA.minTemperature} /> Feels like{" "}
+				<Temp
+					temp={TODAYS_DATA.maxTemperature}
+					high
+					color="neutral-800 dark:text-neutral-50"
+				/>{" "}
+				/ <Temp temp={TODAYS_DATA.minTemperature} /> Feels like{" "}
 				<Temp temp={TODAYS_DATA.apperantMaxTemperature} />
 				<br />
 				<span>{CURRENT_TIME}</span>

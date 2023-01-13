@@ -1,9 +1,9 @@
 import TeritiaryLink from "./components/TeritiaryLink";
 const About = () => {
 	return (
-		<main className="min-h-[calc(100vh-4.5rem)] sm:w-3/4 sm:mx-auto dark:text-neutral-200 text-neutral-700">
-			<section className="px-4 pb-4">
-				<h2 className="my-2 text-2xl md:text-4xl text-neutral-900 font-medium dark:text-neutral-50">
+		<main className="min-h-[calc(100vh-4.5rem)] sm:w-3/4 sm:mx-auto dark:text-neutral-200 text-neutral-700 md:text-lg">
+			<section className="px-4 pb-4 mt-2 md:mt-8">
+				<h2 className="my-2 text-2xl font-medium md:text-5xl text-neutral-900 dark:text-neutral-50 font-title">
 					Resources
 				</h2>
 				<h3 className="my-1 text-neutral-800 dark:text-neutral-100">
@@ -15,7 +15,7 @@ const About = () => {
 				/>
 			</section>
 			<section className="px-4 pb-4">
-				<h2 className="my-2 text-2xl md:text-4xl text-neutral-900 font-medium dark:text-neutral-50">
+				<h2 className="my-2 text-2xl font-medium md:text-5xl text-neutral-900 dark:text-neutral-50 font-title">
 					About this App
 				</h2>
 				<p className="pb-2">
@@ -34,7 +34,7 @@ const About = () => {
 				</p>
 			</section>
 			<section className="px-4">
-				<h2 className="my-2 text-2xl md:text-4xl text-neutral-900 font-medium dark:text-neutral-100">
+				<h2 className="my-2 text-2xl font-medium md:text-5xl text-neutral-900 dark:text-neutral-100 font-title">
 					About me
 				</h2>
 				<p className="pb-3">
