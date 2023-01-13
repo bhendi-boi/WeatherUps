@@ -8,6 +8,10 @@ module.exports = {
 				background: "#e8ebf2",
 				"dark-background": "#0a1929",
 			},
+			fontFamily: {
+				body: ["Epilogue", "sans-serif"],
+				title: ["Sora", "sans-serif"],
+			},
 		},
 	},
 	plugins: [],
