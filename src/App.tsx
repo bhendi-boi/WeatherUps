@@ -48,6 +48,8 @@ const App = () => {
 	const CURRENT_TIME: string = getCurrentTime(apiRes);
 	const CURRENT_TEMPERATURE = currentWeather["temperature"];
 	const TODAYS_DATA = getADaysData(apiRes, 0);
+	const night = new Date().getHours() > 18;
+	console.log(night);
 	return (
 		<main className="min-h-screen sm:w-3/4 sm:mx-auto text-neutral-700 dark:text-neutral-200">
 			<div className="flex items-center px-6">
@@ -58,7 +60,7 @@ const App = () => {
 					</span>
 				</div>
 				<div className="w-1/2 h-full p-8 text-neutral-900 dark:text-neutral-50">
-					{getIcon({ weatherCode: currentWeather.weathercode })}
+					{getIcon({ weatherCode: currentWeather.weathercode, night: night })}
 				</div>
 			</div>
 			<div className="px-6 text-neutral-800 dark:text-neutral-100">
