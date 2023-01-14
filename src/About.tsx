@@ -53,7 +53,7 @@ const About = () => {
 				</p>
 				<ul
 					role="list"
-					className="flex self-center justify-center col-span-2 gap-4 text-base font-medium font-chips"
+					className="flex self-center justify-center col-span-2 gap-4 text-base font-medium"
 				>
 					<li>
 						<a

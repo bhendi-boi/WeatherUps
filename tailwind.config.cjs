@@ -9,7 +9,7 @@ module.exports = {
 				"dark-background": "#0a1929",
 			},
 			fontFamily: {
-				body: ["Oswald", "sans-serif"],
+				body: ["Open Sans", "sans-serif"],
 				title: ["Sora", "sans-serif"],
 			},
 		},
