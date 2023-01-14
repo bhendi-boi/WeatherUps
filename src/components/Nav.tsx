@@ -26,9 +26,13 @@ const Nav = () => {
 					</Link>
 					<button onClick={handleClick}>
 						{theme === "dark" ? (
-							<MdLightMode size={30} className="text-amber-400" />
+							<MdLightMode
+								aria-label="switch to light mode"
+								size={30}
+								className="text-amber-400"
+							/>
 						) : (
-							<MdDarkMode size={30} className="" />
+							<MdDarkMode aria-label="switch to dark mode" size={30} className="" />
 						)}
 					</button>
 				</div>
