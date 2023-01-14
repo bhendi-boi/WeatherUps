@@ -58,7 +58,7 @@ const App = () => {
 					<span className="inline-flex items-center mt-4 mb-1 text-base font-medium md:ml-3 md:text-lg">
 						<GoLocation size={18} className="mr-1" /> {LAT} , {LON}
 					</span>
-					<span className="inline-flex items-center text-sm font-medium tracking-wide md:ml-4 opacity-70">
+					<span className="inline-flex items-center text-xs md:text-sm font-medium tracking-wide md:ml-4 opacity-70">
 						All temperature are displayed in celcius
 					</span>
 				</div>
