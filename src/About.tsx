@@ -21,13 +21,18 @@ const About = () => {
 				<p className="pb-2">
 					This app is completely built with React and Tailwind CSS. I took
 					inspiration from{" "}
-					<TeritiaryLink text="this" href="https://weatherups.netlify.app/" />{" "}
+					<TeritiaryLink
+						label="Link to the website that inspired me to make this app"
+						text="weatherups.netfily.app"
+						href="https://weatherups.netlify.app/"
+					/>{" "}
 					website.
 				</p>
 				<p>
-					You can grab the source code{" "}
+					You can grab the source code on{" "}
 					<TeritiaryLink
-						text="here"
+						label="Link to source code of this app"
+						text="github"
 						href="https://github.com/bhendi-boi/weather-app-tailwind"
 					/>
 					.
