@@ -1,14 +1,9 @@
 # Weather App Tailwind
 
-This is a weather app completely built with React and Tailwind CSS
+This is a weather app completely built with React + TS and Tailwind CSS
 I have used Open Meteo's weather api for weather forecast
+This can be installable on any device since it's a PWA
 
 ## todo
 
--implement hourly forecast
--implement lightmode
--overall better design
-
-## small tasks
-
-- find icons for night
+- find better icons
