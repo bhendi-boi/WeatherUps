@@ -11,6 +11,7 @@ import getCurrentTime from "./helpers/getCurrentTime";
 import getADaysData from "./helpers/getADaysData";
 import getIcon from "./helpers/getIcon";
 import { FAKERES } from "./hooks/useLocalStorageState";
+import { VscRefresh } from "react-icons/vsc";
 
 const App = () => {
 	const [coOrds, setCoOrds] = useState({
@@ -40,6 +41,7 @@ const App = () => {
 		const response = await useWeather().then((res) => res.json());
 		setApiRes(response);
 		setCurrentWeather(response["current_weather"]);
+		console.log("ss");
 	}
 	const [currentWeather, setCurrentWeather] = useState(
 		apiRes["current_weather"]
@@ -57,8 +59,14 @@ const App = () => {
 					<span className="inline-flex items-center mt-4 mb-1 text-base font-medium md:ml-3 md:text-lg">
 						<GoLocation size={18} className="mr-1" /> {LAT} , {LON}
 					</span>
-					<span className="inline-flex items-center text-xs md:text-sm font-medium tracking-wide md:ml-4 opacity-70">
+					<span className="inline-flex items-center gap-2 text-xs md:text-sm font-medium tracking-wide md:ml-4 opacity-70">
 						All temperature are displayed in celcius
+						<VscRefresh
+							className="cursor-pointer"
+							aria-label="Refresh Button"
+							size={18}
+							onClick={handleFetch}
+						/>
 					</span>
 				</div>
 				<div className="w-1/2 h-full p-8 md:p-16 text-neutral-900 dark:text-neutral-50">
