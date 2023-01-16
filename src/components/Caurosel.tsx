@@ -4,19 +4,12 @@ import getHourlyData from "../helpers/getHourlyData";
 import { HourlyData } from "../helpers/getHourlyData";
 
 const Caurosel = (apiRes: any) => {
-	function getOnlyHour(timeStamp: number) {
-		const date = new Date(timeStamp * 1000);
-		return date.getHours();
-	}
-	const [currentHour, setCurrentHour] = useState(
-		getOnlyHour(apiRes["current_weather"].time)
-	);
 	const [hourlyData, setHourlyData] = useState<HourlyData>(
-		getHourlyData(apiRes["hourly"], currentHour)
+		getHourlyData(apiRes)
 	);
 	useEffect(() => {
-		setHourlyData(getHourlyData(apiRes["hourly"], currentHour));
-	}, [currentHour]);
+		setHourlyData(getHourlyData(apiRes));
+	}, []);
 
 	return (
 		<div className="mx-6 my-4 md:my-8">

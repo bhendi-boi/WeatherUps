@@ -1,8 +1,12 @@
+import { useState, useEffect } from "react";
 import getDailyData from "../helpers/getDailyData";
 import { DailyWeatherCard } from "./WeatherCard";
 
 const DailyCaurosel = (apiRes: any) => {
-	const dailyData = getDailyData(apiRes);
+	const [dailyData, setDailyData] = useState(getDailyData(apiRes));
+	useEffect(() => {
+		setDailyData(getDailyData(apiRes));
+	}, []);
 	return (
 		<div className="pb-10 mx-6 my-4">
 			<h2 className="mb-4 text-3xl font-semibold md:text-5xl font-title text-neutral-900 dark:text-neutral-50">

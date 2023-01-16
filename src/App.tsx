@@ -49,7 +49,6 @@ const App = () => {
 	const CURRENT_TEMPERATURE = currentWeather["temperature"];
 	const TODAYS_DATA = getADaysData(apiRes, 0);
 	const night = new Date().getHours() > 18;
-	console.log(night);
 	return (
 		<main className="min-h-screen sm:w-3/4 sm:mx-auto text-neutral-700 dark:text-neutral-200">
 			<div className="flex items-center px-6">

@@ -6,10 +6,15 @@ export type AnHourData = {
 	temp: number;
 };
 export type HourlyData = AnHourData[];
-export default function getHourlyData(hourly: any, currentHour: number) {
+export default function getHourlyData(apiRes: any) {
+	function getOnlyHour(timeStamp: number) {
+		const date = new Date(timeStamp * 1000);
+		return date.getHours();
+	}
 	let data: HourlyData = [];
+	const currentHour = getOnlyHour(apiRes["current_weather"].time);
 	for (let i = currentHour; i <= 23; i++) {
-		data.push(getAnHoursData(hourly, i));
+		data.push(getAnHoursData(apiRes["hourly"], i));
 	}
 	return data;
 }
