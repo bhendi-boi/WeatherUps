@@ -9,7 +9,7 @@ const Caurosel = (apiRes: any) => {
 	);
 	useEffect(() => {
 		setHourlyData(getHourlyData(apiRes));
-	}, []);
+	}, [apiRes]);
 
 	return (
 		<div className="mx-6 my-4 md:my-8">

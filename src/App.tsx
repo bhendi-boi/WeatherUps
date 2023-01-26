@@ -5,15 +5,17 @@ import DailyCaurosel from "./components/DailyCaurosel";
 import { GoLocation } from "react-icons/go";
 
 import useWeather from "./hooks/useWeather";
-import useLocalStorageState from "./hooks/useLocalStorageState";
 import getCords from "./helpers/getCords";
 import getCurrentTime from "./helpers/getCurrentTime";
 import getADaysData from "./helpers/getADaysData";
 import getIcon from "./helpers/getIcon";
-import { FAKERES } from "./hooks/useLocalStorageState";
+
 import { VscRefresh } from "react-icons/vsc";
+import { WiSunrise, WiSunset } from "react-icons/wi";
+import { getTime } from "./helpers/getTime";
 
 const App = () => {
+	const [apiRes, currentWeather, handleFetch] = useWeather();
 	const [coOrds, setCoOrds] = useState({
 		lat: "1",
 		long: "1",
@@ -35,19 +37,9 @@ const App = () => {
 		navigator.geolocation.clearWatch(id);
 		handleFetch();
 	}, []);
-
-	const [apiRes, setApiRes] = useLocalStorageState("APIRES", FAKERES);
-	async function handleFetch() {
-		const response = await useWeather().then((res) => res.json());
-		setApiRes(response);
-		setCurrentWeather(response["current_weather"]);
-		console.log("ss");
-	}
-	const [currentWeather, setCurrentWeather] = useState(
-		apiRes["current_weather"]
-	);
+	console.log(apiRes);
 	const [LAT, LON] = getCords(apiRes);
-	const CURRENT_TIME: string = getCurrentTime(apiRes);
+	const CURRENT_TIME = getCurrentTime(apiRes);
 	const CURRENT_TEMPERATURE = currentWeather["temperature"];
 	const TODAYS_DATA = getADaysData(apiRes, 0);
 	const night = new Date().getHours() > 18;
@@ -64,7 +56,7 @@ const App = () => {
 						<VscRefresh
 							className="cursor-pointer"
 							aria-label="Refresh Button"
-							size={18}
+							size={26}
 							onClick={handleFetch}
 						/>
 					</span>
@@ -84,6 +76,20 @@ const App = () => {
 				<Temp temp={TODAYS_DATA.apperantMaxTemperature} />
 				<br />
 				<span>{CURRENT_TIME}</span>
+			</div>
+			<div className="flex h-28 md:h-40 my-8 md:max-w-lg mx-4 md:mx-auto gap-4 md:gap-10">
+				<div className="flex-1 text-center bg-white rounded-lg shadow-lg">
+					<WiSunrise className="w-full h-2/3 md:h-4/5 text-amber-600" />
+					<p className="text-black font-title">
+						{getTime(apiRes["daily"]["sunrise"][0])}
+					</p>
+				</div>
+				<div className="flex-1 text-center bg-white rounded-lg shadow-lg">
+					<WiSunset className="w-full h-2/3 md:h-4/5 text-amber-400" />
+					<p className="text-black font-title">
+						{getTime(apiRes["daily"]["sunset"][0])}
+					</p>
+				</div>
 			</div>
 			<Caurosel {...apiRes} />
 			<DailyCaurosel {...apiRes} />

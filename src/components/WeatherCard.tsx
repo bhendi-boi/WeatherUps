@@ -46,6 +46,8 @@ export type DailyWeatherCardProps = {
 	maxTemperature: number;
 	minTemperature: number;
 	apperantMaxTemperature: number;
+	sunrise: string;
+	sunset: string;
 };
 
 export const DailyWeatherCard = ({
