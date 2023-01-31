@@ -5,6 +5,7 @@ import DailyCaurosel from "./components/DailyCaurosel";
 import { GoLocation } from "react-icons/go";
 
 import useWeather from "./hooks/useWeather";
+import useNight from "./hooks/useNight";
 import getCords from "./helpers/getCords";
 import getCurrentTime from "./helpers/getCurrentTime";
 import getADaysData from "./helpers/getADaysData";
@@ -13,9 +14,11 @@ import getIcon from "./helpers/getIcon";
 import { VscRefresh } from "react-icons/vsc";
 import { WiSunrise, WiSunset } from "react-icons/wi";
 import { getTime } from "./helpers/getTime";
+import { isNight } from "./helpers/isNight";
 
 const App = () => {
 	const [apiRes, currentWeather, handleFetch] = useWeather();
+	const night = useNight();
 	const [coOrds, setCoOrds] = useState({
 		lat: "1",
 		long: "1",
@@ -37,12 +40,10 @@ const App = () => {
 		navigator.geolocation.clearWatch(id);
 		handleFetch();
 	}, []);
-	console.log(apiRes);
 	const [LAT, LON] = getCords(apiRes);
 	const CURRENT_TIME = getCurrentTime(apiRes);
 	const CURRENT_TEMPERATURE = currentWeather["temperature"];
 	const TODAYS_DATA = getADaysData(apiRes, 0);
-	const night = new Date().getHours() > 18;
 	return (
 		<main className="min-h-screen sm:w-3/4 sm:mx-auto text-neutral-700 dark:text-neutral-200">
 			<div className="flex items-center px-6">

@@ -8,17 +8,15 @@ type WeatherCardProps = {
 	temp: number;
 	feelsLikeTemp: number;
 	humidity?: number;
+	night?: boolean;
 };
 export const HourlyWeatherCard = ({
 	time,
 	weatherCode,
 	temp,
 	feelsLikeTemp,
+	night,
 }: WeatherCardProps) => {
-	const night =
-		Number(
-			time.split("").reverse().join("").slice(3).split("").reverse().join("")
-		) > 18;
 	return (
 		<motion.div
 			whileHover={{ scale: 1.1, y: "-5%" }}
