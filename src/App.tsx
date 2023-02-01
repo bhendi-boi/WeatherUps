@@ -17,7 +17,7 @@ import { getTime } from "./helpers/getTime";
 import { isNight } from "./helpers/isNight";
 
 const App = () => {
-	const [apiRes, currentWeather, handleFetch] = useWeather();
+	const { apiRes, currentWeather, handleFetch } = useWeather();
 	const night = useNight();
 	const [coOrds, setCoOrds] = useState({
 		lat: "1",
