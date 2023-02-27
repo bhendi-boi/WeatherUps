@@ -45,10 +45,7 @@ const About = () => {
 				<p className="pb-3">
 					I am Jyothikrishna. I am a sophomore from IIITDM, Kancheepuram. You can
 					contact me through the following socials or by visiting my{" "}
-					<TeritiaryLink
-						href="https://bhendi-boi.github.io/portfolio/"
-						text="portfolio"
-					/>{" "}
+					<TeritiaryLink href="https://jyothikrishna.vercel.app" text="portfolio" />{" "}
 					website.
 				</p>
 				<ul
