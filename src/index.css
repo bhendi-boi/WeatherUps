@@ -107,5 +107,14 @@ h6 {
     background-color: rgba(56, 111, 164, .8);
   }
 
-  .horizantal-scroll {}
+
+  .scrollbar {
+    scrollbar-width: auto;
+    scrollbar-color: #386FA4 aliceblue;
+  }
+
+  .scrollbar-page {
+    scrollbar-width: auto;
+    scrollbar-color: #386FA4 aliceblue;
+  }
 }
