@@ -80,7 +80,7 @@ h6 {
   .scrollbar::-webkit-scrollbar {
     width: .4rem;
     height: .6rem;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     border-radius: .3rem;
   }
 
@@ -95,7 +95,7 @@ h6 {
 
   .scrollbar-page::-webkit-scrollbar {
     width: .8rem;
-    background-color: #C9C9C9;
+    /* background-color: #C9C9C9; */
   }
 
   .scrollbar-page::-webkit-scrollbar-thumb {
@@ -110,11 +110,11 @@ h6 {
 
   .scrollbar {
     scrollbar-width: auto;
-    scrollbar-color: #386FA4 aliceblue;
+    scrollbar-color: #386FA4;
   }
 
   .scrollbar-page {
     scrollbar-width: auto;
-    scrollbar-color: #386FA4 aliceblue;
+    scrollbar-color: #386FA4;
   }
 }
