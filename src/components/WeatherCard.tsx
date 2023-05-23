@@ -56,7 +56,7 @@ export const DailyWeatherCard = ({
 	apparentMaxTemperature: apparentMaxTemperature,
 }: DailyWeatherCardProps) => {
 	return (
-		<motion.div
+		<motion.li
 			whileHover={{ scale: 1.1, y: "-5%" }}
 			transition={{ type: "tween", ease: "easeOut", duration: 0.2 }}
 			className="flex flex-col items-center py-2 bg-white rounded-lg shadow-lg cursor-pointer min-w-[40vw] h-44 drop-shadow-lg md:min-w-min md:w-44 md:h-52"
@@ -72,6 +72,6 @@ export const DailyWeatherCard = ({
 					Feels like <Temp color="slate-900" high temp={apparentMaxTemperature} />{" "}
 				</span>
 			</div>
-		</motion.div>
+		</motion.li>
 	);
 };
