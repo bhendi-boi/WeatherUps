@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import getDailyData from "../helpers/getDailyData";
 import { DailyWeatherCard } from "./WeatherCard";
 
-const DailyCaurosel = (apiRes: any) => {
+const DailyCarousel = (apiRes: any) => {
 	const [dailyData, setDailyData] = useState(getDailyData(apiRes));
 	useEffect(() => {
 		setDailyData(getDailyData(apiRes));
@@ -21,4 +21,4 @@ const DailyCaurosel = (apiRes: any) => {
 	);
 };
 
-export default DailyCaurosel;
+export default DailyCarousel;

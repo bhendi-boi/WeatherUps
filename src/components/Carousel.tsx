@@ -4,7 +4,8 @@ import getHourlyData from "../helpers/getHourlyData";
 import { HourlyData } from "../helpers/getHourlyData";
 import useWeather from "../hooks/useWeather";
 import useNight from "../hooks/useNight";
-const Caurosel = (apiRes: any) => {
+
+const Carousel = (apiRes: any) => {
 	const [hourlyData, setHourlyData] = useState<HourlyData>(
 		getHourlyData(apiRes)
 	);
@@ -28,4 +29,4 @@ const Caurosel = (apiRes: any) => {
 	);
 };
 
-export default Caurosel;
+export default Carousel;

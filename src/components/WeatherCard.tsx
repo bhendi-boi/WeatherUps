@@ -43,7 +43,7 @@ export type DailyWeatherCardProps = {
 	weatherCode: number;
 	maxTemperature: number;
 	minTemperature: number;
-	apperantMaxTemperature: number;
+	apparentMaxTemperature: number;
 	sunrise: string;
 	sunset: string;
 };
@@ -53,7 +53,7 @@ export const DailyWeatherCard = ({
 	weatherCode,
 	maxTemperature,
 	minTemperature,
-	apperantMaxTemperature,
+	apparentMaxTemperature: apparentMaxTemperature,
 }: DailyWeatherCardProps) => {
 	return (
 		<motion.div
@@ -69,7 +69,7 @@ export const DailyWeatherCard = ({
 					<Temp temp={minTemperature} />
 				</span>
 				<span className="text-xs">
-					Feels like <Temp color="slate-900" high temp={apperantMaxTemperature} />{" "}
+					Feels like <Temp color="slate-900" high temp={apparentMaxTemperature} />{" "}
 				</span>
 			</div>
 		</motion.div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Temp from "./components/Temp";
-import Caurosel from "./components/Caurosel";
-import DailyCaurosel from "./components/DailyCaurosel";
+import Carousel from "./components/Carousel";
+import DailyCarousel from "./components/DailyCarousel";
 import { GoLocation } from "react-icons/go";
 
 import useWeather from "./hooks/useWeather";
@@ -53,7 +53,7 @@ const App = () => {
 						<GoLocation size={18} className="mr-1" /> {LAT} , {LON}
 					</span>
 					<span className="inline-flex items-center gap-2 text-xs md:text-sm font-medium tracking-wide md:ml-4 opacity-70">
-						All temperature are displayed in celcius
+						All temperature are displayed in celsius
 						<VscRefresh
 							className="cursor-pointer"
 							aria-label="Refresh Button"
@@ -74,7 +74,7 @@ const App = () => {
 					color="neutral-800 dark:text-neutral-50"
 				/>{" "}
 				/ <Temp temp={TODAYS_DATA.minTemperature} /> Feels like{" "}
-				<Temp temp={TODAYS_DATA.apperantMaxTemperature} />
+				<Temp temp={TODAYS_DATA.apparentMaxTemperature} />
 				<br />
 				<span>{CURRENT_TIME}</span>
 			</div>
@@ -92,8 +92,8 @@ const App = () => {
 					</p>
 				</div>
 			</div>
-			<Caurosel {...apiRes} />
-			<DailyCaurosel {...apiRes} />
+			<Carousel {...apiRes} />
+			<DailyCarousel {...apiRes} />
 		</main>
 	);
 };
