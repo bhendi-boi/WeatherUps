@@ -9,8 +9,8 @@ module.exports = {
 				"dark-background": "#0a1929",
 			},
 			fontFamily: {
-				body: ["Open Sans", "sans-serif"],
-				title: ["Sora", "sans-serif"],
+				body: ["Roboto", "sans-serif"],
+				title: ["Roboto", "serif"],
 			},
 		},
 	},
