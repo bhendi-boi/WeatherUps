@@ -1,5 +1,6 @@
 {
 	"tabWidth": 1,
 	"useTabs": true,
-	"endOfLine": "lf"
+	"endOfLine": "lf",
+	"plugins": ["prettier-plugin-tailwindcss"]
 }
