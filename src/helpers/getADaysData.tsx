@@ -1,5 +1,5 @@
 import { DailyWeatherCardProps } from "../components/WeatherCard";
-export default function getADaysData(apiRes: any, num: number) {
+export default function getADaysData(apiRes: any,num: number) {
 	const daily = apiRes["daily"];
 	const weatherCode = daily["weathercode"][num];
 	const maxTemperature = daily["temperature_2m_max"][num];
@@ -9,8 +9,8 @@ export default function getADaysData(apiRes: any, num: number) {
 		const num = date.getDay();
 		const todaysDate = date.getDate();
 		const month = date.getMonth();
-		function formatTodaysDate(todaysDate: number, month: number): string {
-			return month + 1 + "/" + todaysDate.toString();
+		function formatTodaysDate(todaysDate: number,month: number): string {
+			return todaysDate.toString() + "/" + (month + 1);
 		}
 		let day = "";
 		switch (num) {
@@ -43,7 +43,7 @@ export default function getADaysData(apiRes: any, num: number) {
 			default:
 				return "";
 		}
-		return day + ", " + formatTodaysDate(todaysDate, month);
+		return day + ", " + formatTodaysDate(todaysDate,month);
 	}
 	const timeStamp = daily["time"][num];
 	const date = new Date(timeStamp * 1000);
