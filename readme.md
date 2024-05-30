@@ -1,4 +1,4 @@
-# Weather App Tailwind
+# WeatherUps
 
 This is a weather app completely built with React + TS and Tailwind CSS.
 I have used Open Meteo's weather api for weather forecast
