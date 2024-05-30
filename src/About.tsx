@@ -1,4 +1,5 @@
-import TeritiaryLink from "./components/TeritiaryLink";
+import TertiaryLink from "./components/TertiaryLink";
+
 const About = () => {
 	return (
 		<main className="min-h-[calc(100vh-4.5rem)] sm:w-3/4 sm:mx-auto dark:text-neutral-200 text-neutral-700 md:text-lg">
@@ -9,7 +10,7 @@ const About = () => {
 				<h3 className="my-1 text-neutral-800 dark:text-neutral-100">
 					Open Meteo API
 				</h3>
-				<TeritiaryLink
+				<TertiaryLink
 					text="https://open-meteo.com/en/docs"
 					href="https://open-meteo.com/en/docs"
 				/>
@@ -21,7 +22,7 @@ const About = () => {
 				<p className="pb-2">
 					This app is completely built with React and Tailwind CSS. I took
 					inspiration from{" "}
-					<TeritiaryLink
+					<TertiaryLink
 						label="Link to the website that inspired me to make this app"
 						text="weatherups.netfily.app"
 						href="https://weatherups.netlify.app/"
@@ -30,7 +31,7 @@ const About = () => {
 				</p>
 				<p>
 					You can grab the source code on{" "}
-					<TeritiaryLink
+					<TertiaryLink
 						label="Link to source code of this app"
 						text="github"
 						href="https://github.com/bhendi-boi/weather-app-tailwind"
@@ -45,7 +46,7 @@ const About = () => {
 				<p className="pb-3">
 					I am Jyothikrishna. I am a sophomore from IIITDM, Kancheepuram. You can
 					contact me through the following socials or by visiting my{" "}
-					<TeritiaryLink href="https://jyothikrishna.vercel.app" text="portfolio" />{" "}
+					<TertiaryLink href="https://jyothikrishna.vercel.app" text="portfolio" />{" "}
 					website.
 				</p>
 				<ul
