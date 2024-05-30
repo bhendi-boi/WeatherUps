@@ -18,27 +18,31 @@ import SunriseSunset from "./components/SunriseSunset";
 const App = () => {
 	const { apiRes,currentWeather,handleFetch } = useWeather();
 	const night = useNight();
-	const [coOrds,setCoOrds] = useState({
-		lat: "1",
-		long: "1",
-	});
+	const [position,setPosition] = useState({ latitude: 0,longitude: 0 });
+
 	useEffect(() => {
-		navigator.geolocation.getCurrentPosition(findCords,error,{
-			timeout: 100000,
-		});
-		function findCords(position: any) {
-			setCoOrds({
-				lat: position.coords.latitude,
-				long: position.coords.longitude,
+		if ("geolocation" in navigator) {
+			navigator.geolocation.getCurrentPosition(success,error);
+		} else {
+			console.log("Geolocation is not available in your browser.");
+		}
+		function success(position: any) {
+			console.log(position)
+			setPosition({
+				latitude: position.coords.latitude,
+				longitude: position.coords.longitude,
 			});
 		}
 		function error() {
-			console.log("error");
+			console.log("Unable to retrieve your location");
 		}
-		const id = navigator.geolocation.watchPosition(findCords,error);
-		navigator.geolocation.clearWatch(id);
-		handleFetch();
 	},[]);
+
+	useEffect(() => {
+		handleFetch()
+	},[])
+
+	console.log(position)
 	const [LAT,LON] = getCords(apiRes);
 	const CURRENT_TIME = getCurrentTime(apiRes);
 	const CURRENT_TEMPERATURE = currentWeather["temperature"];
