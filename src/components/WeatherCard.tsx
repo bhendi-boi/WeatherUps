@@ -18,10 +18,7 @@ export const HourlyWeatherCard = ({
 	night,
 }: WeatherCardProps) => {
 	return (
-		<motion.div
-			whileHover={{ scale: 1.1, y: "-5%" }}
-			className="flex flex-col items-center py-2 bg-white rounded-lg shadow-lg cursor-pointer min-w-[40vw] h-44 drop-shadow-lg md:min-w-min md:w-44 md:h-52"
-		>
+		<motion.li className="flex flex-col items-center w-44 bg-white rounded-lg py-2 md:min-w-min">
 			<span className="text-lg font-medium text-slate-900">{time}</span>
 			<div className="flex-grow pb-2 text-black">
 				{getIcon({ weatherCode, night })}
@@ -34,7 +31,7 @@ export const HourlyWeatherCard = ({
 				</span>
 				{/* <WiRaindrop size={30} className="self-center" /> */}
 			</div>
-		</motion.div>
+		</motion.li>
 	);
 };
 
@@ -56,11 +53,7 @@ export const DailyWeatherCard = ({
 	apparentMaxTemperature: apparentMaxTemperature,
 }: DailyWeatherCardProps) => {
 	return (
-		<motion.li
-			whileHover={{ scale: 1.1, y: "-5%" }}
-			transition={{ type: "tween", ease: "easeOut", duration: 0.2 }}
-			className="flex flex-col items-center py-2 bg-white rounded-lg shadow-lg cursor-pointer min-w-[40vw] h-44 drop-shadow-lg md:min-w-min md:w-44 md:h-52"
-		>
+		<motion.li className="flex flex-col items-center w-44 bg-white rounded-lg py-2 md:min-w-min">
 			<span className="text-lg font-medium text-slate-900">{day}</span>
 			<div className="flex-grow pb-2 text-black">{getIcon({ weatherCode })}</div>
 			<div className="flex flex-col items-center justify-center text-slate-700">
