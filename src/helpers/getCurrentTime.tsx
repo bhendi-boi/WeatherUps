@@ -29,7 +29,7 @@ function getCurrentTime(apiRes: any) {
 		", " +
 		currentHours +
 		":" +
-		currentMin +
+		(currentMin ? "00" : (currentMin)) +
 		" " +
 		TIMEZONE
 	);
