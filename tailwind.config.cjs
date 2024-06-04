@@ -5,8 +5,12 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				background: "#e8ebf2",
-				"dark-background": "#0a1929",
+				background: "#e2e8f0",
+				"dark-background": "#0f172a",
+				"carousel-background": "#f8fafc",
+				"dark-carousel-background": "#1e293b",
+				text: "#030712",
+				"dark-text": "#f9fafb",
 			},
 			fontFamily: {
 				body: ["Roboto", "sans-serif"],

@@ -48,7 +48,7 @@ const App = () => {
 	const CURRENT_TEMPERATURE = currentWeather["temperature"];
 	const TODAYS_DATA = getADaysData(apiRes,0);
 	return (
-		<main className="pb-8 md:pb-12 sm:w-3/4 sm:mx-auto text-neutral-700 dark:text-neutral-200 px-6">
+		<main className="pb-8 md:pb-12 sm:w-3/4 sm:mx-auto text-text dark:text-dark-text px-6">
 			<div className="flex items-center">
 				<div className="flex flex-col justify-center w-1/2 text-4xl text-neutral-900 dark:text-neutral-50">
 					<Temp temp={CURRENT_TEMPERATURE} high color=" md:text-9xl" />
@@ -69,7 +69,7 @@ const App = () => {
 					{getIcon({ weatherCode: currentWeather.weathercode,night: night })}
 				</div>
 			</div>
-			<div className="md:ml-4 md:text-lg text-neutral-800 dark:text-neutral-200">
+			<div className="md:ml-4 md:text-lg">
 				{" "}
 				<Temp
 					temp={TODAYS_DATA.maxTemperature}

@@ -19,15 +19,15 @@ export const HourlyWeatherCard = ({
 }: WeatherCardProps) => {
 	return (
 		<motion.li className="flex flex-col items-center w-32 bg-transparent rounded-lg py-2 md:w-40">
-			<span className="text-lg font-medium text-slate-900">{time}</span>
-			<div className="flex-grow pb-2 text-black">
+			<span className="text-lg font-medium">{time}</span>
+			<div className="flex-grow pb-2">
 				{getIcon({ weatherCode,night })}
 			</div>
-			<div className="flex flex-col items-center justify-center text-slate-700">
+			<div className="flex flex-col items-center justify-center text-slate">
 				{" "}
 				<Temp temp={temp} color="slate-900" high />{" "}
 				<span className="text-xs">
-					Feels like <Temp temp={feelsLikeTemp} high color="slate-900" />{" "}
+					Feels like <Temp temp={feelsLikeTemp} high color="text dark:text-dark-text" />{" "}
 				</span>
 				{/* <WiRaindrop size={30} className="self-center" /> */}
 			</div>
@@ -54,15 +54,15 @@ export const DailyWeatherCard = ({
 }: DailyWeatherCardProps) => {
 	return (
 		<motion.li className="flex flex-col items-center w-32 bg-transparent rounded-lg py-2 md:w-40">
-			<span className="text-lg font-medium text-slate-900">{day}</span>
-			<div className="flex-grow pb-2 text-black">{getIcon({ weatherCode })}</div>
-			<div className="flex flex-col items-center justify-center text-slate-700">
+			<span className="text-lg font-medium">{day}</span>
+			<div className="flex-grow pb-2">{getIcon({ weatherCode })}</div>
+			<div className="flex flex-col items-center justify-center">
 				<span>
-					<Temp color="slate-900" temp={maxTemperature} high /> /{" "}
+					<Temp color="text dark:text-dark-text" temp={maxTemperature} high /> /{" "}
 					<Temp temp={minTemperature} />
 				</span>
 				<span className="text-xs">
-					Feels like <Temp color="slate-900" high temp={apparentMaxTemperature} />{" "}
+					Feels like <Temp color="text dark:text-dark-text" high temp={apparentMaxTemperature} />{" "}
 				</span>
 			</div>
 		</motion.li>
