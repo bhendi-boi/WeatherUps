@@ -18,10 +18,10 @@ export const HourlyWeatherCard = ({
 	night,
 }: WeatherCardProps) => {
 	return (
-		<motion.li className="flex flex-col items-center w-44 bg-white rounded-lg py-2 md:min-w-min">
+		<motion.li className="flex flex-col items-center w-32 bg-transparent rounded-lg py-2 md:w-40">
 			<span className="text-lg font-medium text-slate-900">{time}</span>
 			<div className="flex-grow pb-2 text-black">
-				{getIcon({ weatherCode, night })}
+				{getIcon({ weatherCode,night })}
 			</div>
 			<div className="flex flex-col items-center justify-center text-slate-700">
 				{" "}
@@ -53,7 +53,7 @@ export const DailyWeatherCard = ({
 	apparentMaxTemperature: apparentMaxTemperature,
 }: DailyWeatherCardProps) => {
 	return (
-		<motion.li className="flex flex-col items-center w-44 bg-white rounded-lg py-2 md:min-w-min">
+		<motion.li className="flex flex-col items-center w-32 bg-transparent rounded-lg py-2 md:w-40">
 			<span className="text-lg font-medium text-slate-900">{day}</span>
 			<div className="flex-grow pb-2 text-black">{getIcon({ weatherCode })}</div>
 			<div className="flex flex-col items-center justify-center text-slate-700">

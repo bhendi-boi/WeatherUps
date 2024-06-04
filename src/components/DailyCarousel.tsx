@@ -8,9 +8,9 @@ const DailyCarousel = (apiRes: any) => {
 		setDailyData(getDailyData(apiRes));
 	},[apiRes]);
 	return (
-		<div className="mt-4 md:mt-8">
-			<div className="overflow-hidden h-36 md:h-56 pb-4">
-				<ul className="grid grid-flow-col gap-8 overflow-x-auto h-40 md:h-60 py-4">
+		<div className="mt-8">
+			<div className="overflow-hidden h-36 md:h-56 pb-4 rounded-md">
+				<ul className="grid grid-flow-col overflow-x-auto h-40 md:h-60 pb-4 bg-white px-4">
 					{dailyData.map((daily,index) => (
 						<DailyWeatherCard key={index} {...daily} />
 					))}
