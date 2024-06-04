@@ -3,5 +3,5 @@ export function getTime(unixTimestamp: number): string {
 	let currentHours = date.getHours();
 	let currentMin =
 		date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
-	return `${currentHours} : ${currentMin} hrs`;
+	return `${currentHours} : ${currentMin} Hrs`;
 }
