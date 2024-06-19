@@ -13,5 +13,5 @@ export default function getCords(apiRes: any) {
 	} else {
 		LON += " E";
 	}
-	return [LAT, LON];
+	return { LAT, LON };
 }

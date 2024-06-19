@@ -1,4 +1,4 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import Temp from "./components/Temp";
 import Carousel from "./components/Carousel";
 import DailyCarousel from "./components/DailyCarousel";
@@ -14,48 +14,32 @@ import getIcon from "./helpers/getIcon";
 import { VscRefresh } from "react-icons/vsc";
 import SunriseSunset from "./components/SunriseSunset";
 
-
 const App = () => {
-	const { apiRes,currentWeather,handleFetch } = useWeather();
+	const { apiRes, currentWeather, handleFetch } = useWeather();
 	const night = useNight();
-	const [position,setPosition] = useState({ latitude: 0,longitude: 0 });
+
+	const [LAT, setLAT] = useState(0);
+	const [LON, setLON] = useState(0);
 
 	useEffect(() => {
-		if ("geolocation" in navigator) {
-			navigator.geolocation.getCurrentPosition(success,error);
-		} else {
-			console.log("Geolocation is not available in your browser.");
-		}
-		function success(position: any) {
-			console.log(position)
-			setPosition({
-				latitude: position.coords.latitude,
-				longitude: position.coords.longitude,
-			});
-		}
-		function error() {
-			console.log("Unable to retrieve your location");
-		}
-	},[]);
+		handleFetch();
+		const { LAT: lat, LON: lon } = getCords(apiRes);
+		setLAT(lat);
+		setLON(lon);
+	}, []);
 
-	useEffect(() => {
-		handleFetch()
-	},[])
-
-	console.log(position)
-	const [LAT,LON] = getCords(apiRes);
 	const CURRENT_TIME = getCurrentTime(apiRes);
 	const CURRENT_TEMPERATURE = currentWeather["temperature"];
-	const TODAYS_DATA = getADaysData(apiRes,0);
+	const TODAYS_DATA = getADaysData(apiRes, 0);
 	return (
-		<main className="pb-8 md:pb-12 sm:w-3/4 sm:mx-auto text-text dark:text-dark-text px-6">
+		<main className="px-6 pb-8 text-text dark:text-dark-text sm:mx-auto sm:w-3/4 md:pb-12">
 			<div className="flex items-center">
-				<div className="flex flex-col justify-center w-1/2 text-4xl text-neutral-900 dark:text-neutral-50">
+				<div className="flex w-1/2 flex-col justify-center text-4xl text-neutral-900 dark:text-neutral-50">
 					<Temp temp={CURRENT_TEMPERATURE} high color=" md:text-9xl" />
-					<span className="inline-flex items-center mt-4 mb-1 text-base font-medium md:ml-3 md:text-lg">
+					<span className="mb-1 mt-4 inline-flex items-center text-base font-medium md:ml-3 md:text-lg">
 						<GoLocation size={18} className="mr-1" /> {LAT} , {LON}
 					</span>
-					<span className="inline-flex items-center gap-2 text-xs md:text-sm font-medium tracking-wide md:ml-4 opacity-70">
+					<span className="inline-flex items-center gap-2 text-xs font-medium tracking-wide opacity-70 md:ml-4 md:text-sm">
 						All temperature are displayed in celsius
 						<VscRefresh
 							className="cursor-pointer"
@@ -65,8 +49,8 @@ const App = () => {
 						/>
 					</span>
 				</div>
-				<div className="w-1/2 h-full p-8 md:p-16 text-neutral-900 dark:text-neutral-50">
-					{getIcon({ weatherCode: currentWeather.weathercode,night: night })}
+				<div className="h-full w-1/2 p-8 text-neutral-900 dark:text-neutral-50 md:p-16">
+					{getIcon({ weatherCode: currentWeather.weathercode, night: night })}
 				</div>
 			</div>
 			<div className="md:ml-4 md:text-lg">
