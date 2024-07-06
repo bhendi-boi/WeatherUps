@@ -2,9 +2,9 @@ import TertiaryLink from "./components/TertiaryLink";
 
 const About = () => {
 	return (
-		<main className="min-h-[calc(100vh-4.5rem)] sm:w-3/4 sm:mx-auto dark:text-neutral-200 text-neutral-700 md:text-lg">
-			<section className="px-4 pb-4 mt-2 md:mt-8">
-				<h2 className="my-2 text-2xl font-medium md:text-5xl text-neutral-900 dark:text-neutral-50 font-title">
+		<main className="min-h-[calc(100vh-4.5rem)] text-neutral-700 dark:text-neutral-200 sm:mx-auto sm:w-3/4 md:text-lg">
+			<section className="mt-2 px-4 pb-4 md:mt-8">
+				<h2 className="my-2 font-title text-xl font-medium text-neutral-900 dark:text-neutral-50 md:text-5xl">
 					Resources
 				</h2>
 				<h3 className="my-1 text-neutral-800 dark:text-neutral-100">
@@ -16,10 +16,10 @@ const About = () => {
 				/>
 			</section>
 			<section className="px-4 pb-4">
-				<h2 className="my-2 text-2xl font-medium md:text-5xl text-neutral-900 dark:text-neutral-50 font-title">
+				<h2 className="my-2 font-title text-xl font-medium text-neutral-900 dark:text-neutral-50 md:text-5xl">
 					About this App
 				</h2>
-				<p className="pb-2">
+				<p>
 					This app is completely built with React and Tailwind CSS. I took
 					inspiration from{" "}
 					<TertiaryLink
@@ -40,18 +40,17 @@ const About = () => {
 				</p>
 			</section>
 			<section className="px-4">
-				<h2 className="my-2 text-2xl font-medium md:text-5xl text-neutral-900 dark:text-neutral-100 font-title">
+				<h2 className="my-2 font-title text-xl font-medium text-neutral-900 dark:text-neutral-100 md:text-5xl">
 					About me
 				</h2>
 				<p className="pb-3">
-					I am Jyothikrishna. I am a sophomore from IIITDM, Kancheepuram. You can
-					contact me through the following socials or by visiting my{" "}
-					<TertiaryLink href="https://jyothikrishna.vercel.app" text="portfolio" />{" "}
-					website.
+					I am Jyothikrishna, a freelance frontend developer from India with 2+ years
+					of experience with React/NextJS and tailwindcss. You can find my socials
+					below.
 				</p>
 				<ul
 					role="list"
-					className="flex self-center justify-center col-span-2 gap-4 text-base font-medium"
+					className="col-span-2 flex justify-center gap-4 self-center text-base font-medium"
 				>
 					<li>
 						<a
@@ -59,7 +58,7 @@ const About = () => {
 							target="_blank"
 							href="https://github.com/bhendi-boi"
 							title="Github Profile"
-							className="text-blue-500 relative after:content-[''] after:w-0 after:h-[1px] after:bg-blue-500 after:absolute after:left-0 after:bottom-0 hover:after:w-full after:-translate-x-1/4 hover:after:translate-x-0 hover:after:transition after:origin-left after:duration-200"
+							className="relative text-blue-500 after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:origin-left after:-translate-x-1/4 after:bg-blue-500 after:duration-200 after:content-[''] hover:after:w-full hover:after:translate-x-0 hover:after:transition"
 						>
 							Github
 						</a>
@@ -70,7 +69,7 @@ const About = () => {
 							target="_blank"
 							href="https://www.linkedin.com/in/jyothikrishna-sajja-96bb45226/"
 							title="Linked-in Profile"
-							className="text-blue-500 relative after:content-[''] after:w-0 after:h-[1px] after:bg-blue-500 after:absolute after:left-0 after:bottom-0 hover:after:w-full after:-translate-x-1/4 hover:after:translate-x-0 hover:after:transition after:origin-left after:duration-200"
+							className="relative text-blue-500 after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:origin-left after:-translate-x-1/4 after:bg-blue-500 after:duration-200 after:content-[''] hover:after:w-full hover:after:translate-x-0 hover:after:transition"
 						>
 							Linkedin
 						</a>
@@ -81,7 +80,7 @@ const About = () => {
 							target="_blank"
 							href="mailto:bhendiisgreen@gmail.com"
 							title="mail me"
-							className="text-blue-500 relative after:content-[''] after:w-0 after:h-[1px] after:bg-blue-500 after:absolute after:left-0 after:bottom-0 hover:after:w-full after:-translate-x-1/4 hover:after:translate-x-0 hover:after:transition after:origin-left after:duration-200"
+							className="relative text-blue-500 after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:origin-left after:-translate-x-1/4 after:bg-blue-500 after:duration-200 after:content-[''] hover:after:w-full hover:after:translate-x-0 hover:after:transition"
 						>
 							Gmail
 						</a>
@@ -92,7 +91,7 @@ const About = () => {
 							target="_blank"
 							href="https://dev.to/bhendi"
 							title="Dev.to profile"
-							className="text-blue-500 relative after:content-[''] after:w-0 after:h-[1px] after:bg-blue-500 after:absolute after:left-0 after:bottom-0 hover:after:w-full after:-translate-x-1/4 hover:after:translate-x-0 hover:after:transition after:origin-left after:duration-200"
+							className="relative text-blue-500 after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:origin-left after:-translate-x-1/4 after:bg-blue-500 after:duration-200 after:content-[''] hover:after:w-full hover:after:translate-x-0 hover:after:transition"
 						>
 							Dev.to
 						</a>
