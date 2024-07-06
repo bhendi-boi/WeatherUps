@@ -2,7 +2,7 @@ import { FAKERES } from "./useLocalStorageState";
 import { useEffect, useState } from "react";
 
 const useWeather = () => {
-	const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
+	const [position, setPosition] = useState({ latitude: 10, longitude: 80 });
 	useEffect(() => {
 		if ("geolocation" in navigator) {
 			navigator.geolocation.getCurrentPosition(success, error);
